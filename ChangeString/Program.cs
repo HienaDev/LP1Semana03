@@ -18,7 +18,7 @@ namespace ChangeString
             {
                 if (c != character)
                 {
-                    Console.WriteLine(c);
+                    Console.Write(c);
                 }
             }
         }
