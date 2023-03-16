@@ -14,7 +14,13 @@ namespace ChangeString
 
             char character = char.Parse(Console.ReadLine());
 
-            
+            foreach(char c in phrase)
+            {
+                if (c != character)
+                {
+                    Console.WriteLine(c);
+                }
+            }
         }
     }
 }
