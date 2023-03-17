@@ -11,24 +11,6 @@ namespace PlayerPerks
 
             myPerks = 0;
 
-            Console.WriteLine(myPerks);
-
-            myPerks ^= perks.WaterBreathing;
-
-            Console.WriteLine(myPerks);
-
-            myPerks ^= perks.AutoHeal;
-
-            Console.WriteLine(myPerks);
-
-            myPerks ^= (perks) 1;
-
-            Console.WriteLine(myPerks);
-            
-            myPerks ^= (perks) 4;
-
-            Console.WriteLine(myPerks);
-
             foreach (char c in args[0])
             {
                 if ( c == "w")
