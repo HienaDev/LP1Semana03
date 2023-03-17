@@ -38,21 +38,17 @@ namespace PlayerPerks
                 }
 
             if ((int) myPerks == 0)
-            {
                 Console.WriteLine("No perks at all!");
-            }
-            else 
-            {
-                if ((int) (myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
-                {
-                    Console.WriteLine("Silent jumper!");
-                }
-                if ((int) (myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
-                {
-                    Console.WriteLine("Silent jumper!");
-                }
+            else
                 Console.WriteLine(myPerks);
-            }
+
+            if ((int) (myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
+                Console.WriteLine("Silent jumper!");
+
+            if ((int) (myPerks & (perks.AutoHeal)) == 0)
+                Console.WriteLine("Not gonna make it!");
+            
+            
 
         }
     }
