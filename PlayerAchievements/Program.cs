@@ -6,7 +6,9 @@ namespace PlayerAchievements
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Asks the user how many players and receives that input
+            Console.WriteLine("How many players are there?");
+            int n = int.Parse(Console.ReadLine());
         }
     }
 }
