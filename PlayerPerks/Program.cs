@@ -1,4 +1,5 @@
 ﻿using System;
+using PerksToUse;
 
 namespace PlayerPerks
 {
@@ -6,7 +7,65 @@ namespace PlayerPerks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            perks myPerks;
+
+            myPerks = 0;
+
+            Console.WriteLine(myPerks);
+
+            myPerks ^= perks.WaterBreathing;
+
+            Console.WriteLine(myPerks);
+
+            myPerks ^= perks.AutoHeal;
+
+            Console.WriteLine(myPerks);
+
+            myPerks ^= (perks) 1;
+
+            Console.WriteLine(myPerks);
+            
+            myPerks ^= (perks) 4;
+
+            Console.WriteLine(myPerks);
+
+            foreach (char c in args[0])
+            {
+                if ( c == "w")
+                {
+                    myPerks ^= perks.WaterBreathing;
+                }
+                else if ( c == "a")
+                {
+                    myPerks ^= perks.AutoHeal;
+                }
+                else if ( c == "s")
+                {
+                    myPerks ^= perks.Stealth;
+                }
+                else if ( c == "d")
+                {
+                    myPerks ^= perks.DoubleJump;
+                }
+                else
+                {
+                    Console.WriteLine("Unknown perk!");
+                    return;
+                }
+            }
+
+            if (myPerks == 0)
+            {
+                Console.WriteLine("No perks at all!");
+            }
+            else 
+            {
+                if ((myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
+                {
+                    Console.WriteLine("Silent jumper!");
+                }
+            }
+
         }
     }
 }
