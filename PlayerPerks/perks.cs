@@ -1,6 +1,7 @@
 using System;
 
-
+// Created enum with flags so it can be treated as bits
+// Activates each perk bit by bit
 namespace PerksToUse
 {
     [Flags]
