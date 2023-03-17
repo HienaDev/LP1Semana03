@@ -17,21 +17,17 @@ namespace PlayerPerks
                 foreach (char c in args[0])
                 {
                     if ( c == 'w')
-                    {
                         myPerks ^= perks.WaterBreathing;
-                    }
+                
                     else if ( c == 'a')
-                    {
                         myPerks ^= perks.AutoHeal;
-                    }
+                    
                     else if ( c == 's')
-                    {
                         myPerks ^= perks.Stealth;
-                    }
+                    
                     else if ( c == 'd')
-                    {
                         myPerks ^= perks.DoubleJump;
-                    }
+                    
                     else
                     {
                         Console.WriteLine("Unknown perk!");
