@@ -13,33 +13,41 @@ namespace PlayerAchievements
 
             achievements achievementsTable;
 
-            int[] player_list = new int[n];
+            achievements[] player_list = new achievements[n];
 
             string answer;
 
             for (int i = 0; i < n; i++)
             {
                 achievementsTable = 0;
-                Console.WriteLine($"Achievements for player {i}:");
+                Console.WriteLine($"\nAchievements for player {i + 1}:");
                 Console.WriteLine
-                ("Has the player defeated the optional boss? (Y/N)");
+                ("Has the player defeated the optional boss? (Y/N)\n");
                 answer = Console.ReadLine().ToUpper();
                 if (answer == "Y")
                     achievementsTable ^= achievements.DefeatOptionalBoss;
 
                 Console.WriteLine
-                ("Has the player found the hidden level? (Y/N)");
+                ("Has the player found the hidden level? (Y/N)\n");
                 answer = Console.ReadLine().ToUpper();
                 if (answer == "Y")
                     achievementsTable ^= achievements.FindHiddenLevel;
 
                 Console.WriteLine
-                ("Has the player finished the game? (Y/N)");
+                ("Has the player finished the game? (Y/N)\n");
                 answer = Console.ReadLine().ToUpper();
                 if (answer == "Y")
                     achievementsTable ^= achievements.FinishGame;
+
+                player_list[i] = achievementsTable;
             }
 
+            Console.WriteLine();
+
+            foreach (achievements player in player_list)
+            {
+                Console.WriteLine(player);
+            }
         }
 
         
