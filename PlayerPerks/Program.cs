@@ -7,11 +7,13 @@ namespace PlayerPerks
     {
         static void Main(string[] args)
         {
-            perks myPerks;
-
-            myPerks = 0;
+            // Initalized perks variable to save user's perks
+            perks myPerks = 0;
             
+            // Check if there are any arguments passed to the program
+            // if not, skips the for loop
             if (args.Length > 0)
+                // Goes through each character of the string args[0]
                 foreach (char c in args[0])
                 {
                     if ( c == 'w')
