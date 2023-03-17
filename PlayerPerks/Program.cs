@@ -10,42 +10,48 @@ namespace PlayerPerks
             perks myPerks;
 
             myPerks = 0;
+            
+            if (args.Length > 0)
+                foreach (char c in args[0])
+                {
+                    if ( c == 'w')
+                    {
+                        myPerks ^= perks.WaterBreathing;
+                    }
+                    else if ( c == 'a')
+                    {
+                        myPerks ^= perks.AutoHeal;
+                    }
+                    else if ( c == 's')
+                    {
+                        myPerks ^= perks.Stealth;
+                    }
+                    else if ( c == 'd')
+                    {
+                        myPerks ^= perks.DoubleJump;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unknown perk!");
+                        return;
+                    }
+                }
 
-            foreach (char c in args[0])
-            {
-                if ( c == "w")
-                {
-                    myPerks ^= perks.WaterBreathing;
-                }
-                else if ( c == "a")
-                {
-                    myPerks ^= perks.AutoHeal;
-                }
-                else if ( c == "s")
-                {
-                    myPerks ^= perks.Stealth;
-                }
-                else if ( c == "d")
-                {
-                    myPerks ^= perks.DoubleJump;
-                }
-                else
-                {
-                    Console.WriteLine("Unknown perk!");
-                    return;
-                }
-            }
-
-            if (myPerks == 0)
+            if ((int) myPerks == 0)
             {
                 Console.WriteLine("No perks at all!");
             }
             else 
             {
-                if ((myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
+                if ((int) (myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
                 {
                     Console.WriteLine("Silent jumper!");
                 }
+                if ((int) (myPerks & (perks.Stealth | perks.DoubleJump)) == 10)
+                {
+                    Console.WriteLine("Silent jumper!");
+                }
+                Console.WriteLine(myPerks);
             }
 
         }
