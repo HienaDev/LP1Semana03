@@ -20,7 +20,7 @@ namespace PlayerPerks
                     // Checks if the character is wasd, and if it is
                     // toggles the specific perk
                     // If its none of those, stops the program and 
-                    // pritns Unkown perk!
+                    // prints Unknown perk!
                     if ( c == 'w')
                         myPerks ^= perks.WaterBreathing;
                 
